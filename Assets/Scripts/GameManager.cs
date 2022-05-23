@@ -23,13 +23,13 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public Plot GetTargetPlot(int indexNumber)
+    public void SoulWentToAfterlife(Afterlife afterlifePlace, int alignmentPoints)
     {
         throw new System.NotImplementedException();
     }
 
-    public void SoulWentToAfterlife(Afterlife afterlifePlace, int alignmentPoints)
+    public static Plot GetTargetPlot(int indexNumber)
     {
-        throw new System.NotImplementedException();
+        return null;
     }
 }
