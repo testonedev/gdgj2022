@@ -1,49 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="HeavenManager">
-    <Position X="1" Y="3.25" Width="2" />
+    <Position X="1.25" Y="5.25" Width="2" />
+    <InheritanceLine Type="ParkManager" FixedFromPoint="true">
+      <Path>
+        <Point X="3.688" Y="5.713" />
+        <Point X="3.688" Y="5.866" />
+        <Point X="3.25" Y="5.866" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\HeavenManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameManager">
-    <Position X="2.5" Y="5.25" Width="2.5" />
+    <Position X="2.5" Y="7" Width="2.5" />
     <TypeIdentifier>
       <HashCode>ABQAAAAAACAAAAAAAAAAAAAAACAAAAAAAQAABAAAAAA=</HashCode>
       <FileName>Assets\Scripts\GameManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="heavenManager" />
       <Field Name="hellManager" />
+      <Field Name="heavenManager" />
     </ShowAsAssociation>
   </Class>
   <Class Name="ParkManager">
     <Position X="2.5" Y="0.5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>EAQAEAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAggA=</HashCode>
+      <HashCode>EAQEEAAAACIAkAAAACBAAAAAAAAAQAAACAAAABACgsA=</HashCode>
       <FileName>Assets\Scripts\ParkManager.cs</FileName>
       <NewMemberFileName>Assets\Scripts\HellManager.cs</NewMemberFileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Spawner">
-    <Position X="10.75" Y="0.5" Width="3" />
+    <Position X="9.25" Y="0.5" Width="3" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAACAAAAAAAACAAAAAAAAAAAAAAAIAAAAQgAA=</HashCode>
       <FileName>Assets\Scripts\Spawner.cs</FileName>
       <NewMemberFileName>Assets\Scripts\Soul.cs</NewMemberFileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="soulPrefab" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Plot">
-    <Position X="7.5" Y="3.25" Width="2" />
+    <Position X="6.5" Y="3.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAQAAAABACAAAAQAAAAAAAAgAAAAAIAAAAAAAAAAIAA=</HashCode>
+      <HashCode>ABQAAAABACAAAQRAACBAQAAgkAAAAIAAAAAgAAAAIAA=</HashCode>
       <FileName>Assets\Scripts\Plot.cs</FileName>
       <NewMemberFileName>Assets\Scripts\HellManager.cs</NewMemberFileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Soul">
-    <Position X="10.75" Y="3.25" Width="3" />
+    <Position X="9.25" Y="3.25" Width="3" />
     <TypeIdentifier>
       <HashCode>AAQAAABAACAAAAAAQAAIAAAAAAAAAATAAAAAAAgBAAA=</HashCode>
       <FileName>Assets\Scripts\Soul.cs</FileName>
@@ -53,9 +63,16 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="HellManager">
-    <Position X="4.5" Y="3.25" Width="1.75" />
+    <Position X="4.25" Y="5.25" Width="1.75" />
+    <InheritanceLine Type="ParkManager" FixedFromPoint="true">
+      <Path>
+        <Point X="3.688" Y="5.713" />
+        <Point X="3.688" Y="5.986" />
+        <Point X="4.25" Y="5.986" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\HellManager.cs</FileName>
     </TypeIdentifier>
   </Class>

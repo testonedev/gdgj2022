@@ -4,16 +4,5 @@ using UnityEngine;
 
 public class HellManager : ParkManager
 {
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public override Alignment Alignment { get => Alignment.Hell; }
 }

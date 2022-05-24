@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Afterlife { Heaven, Hell }
+public enum Alignment { Heaven, Hell }
 
 public class GameManager : MonoBehaviour
-{
-    
-    
+{    
     private HellManager hellManager;
     private HeavenManager heavenManager;
 
@@ -23,7 +21,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void SoulWentToAfterlife(Afterlife afterlifePlace, int alignmentPoints)
+    public void SoulWentToAfterlife(Alignment afterlifePlace, int alignmentPoints)
     {
         throw new System.NotImplementedException();
     }
