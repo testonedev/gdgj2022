@@ -20,7 +20,7 @@ public class Soul : MonoBehaviour
     private int currentPlotIndex = 0;
     private GameManager gameManager;
     private bool interactionFinished;
-    private Afterlife goingForAfterlife;
+    private Alignment goingForAfterlife;
 
     private void OnEnable()
     {
@@ -73,14 +73,14 @@ public class Soul : MonoBehaviour
     private void GoToHeaven()
     {
         agent.SetDestination(heavenEntrance.transform.position);
-        goingForAfterlife = Afterlife.Heaven;
+        goingForAfterlife = Alignment.Heaven;
     }
 
     [ContextMenu("GoToHell")]
     private void GoToHell()
     {
         agent.SetDestination(hellEntrance.transform.position);
-        goingForAfterlife = Afterlife.Hell;
+        goingForAfterlife = Alignment.Hell;
     }
 
     private bool PlotInRange()
@@ -99,10 +99,10 @@ public class Soul : MonoBehaviour
 
     private IEnumerator Interaction()
     {
-        if (targetPlot.alignment == Afterlife.Heaven) alignmentVisits++;
+        if (targetPlot.Alignment == Alignment.Heaven) alignmentVisits++;
         else alignmentVisits--;
 
-        if (targetPlot.alignment == Afterlife.Heaven) alignmentPoints += Mathf.Abs(targetPlot.GetAlignmentPoints());
+        if (targetPlot.Alignment == Alignment.Heaven) alignmentPoints += Mathf.Abs(targetPlot.GetAlignmentPoints());
         else alignmentPoints -= Mathf.Abs(targetPlot.GetAlignmentPoints());
 
         interactionFinished = false;

@@ -22,7 +22,7 @@ public class GameManager : Singleton<GameManager>
         
     }
 
-    public void SoulWentToAfterlife(Alignment afterlifePlace, int alignmentPoints)
+    public static void SoulWentToAfterlife(Alignment afterlifePlace, int alignmentPoints)
     {
         throw new System.NotImplementedException();
     }
