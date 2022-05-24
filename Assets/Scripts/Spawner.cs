@@ -5,17 +5,15 @@ using UltEvents;
 
 public class Spawner : MonoBehaviour
 {
-    private GameObject soulPrefab;
-    private Transform spawnLocation;
-    private UltEvent<Soul> onSoulSpawnedEvent;
+    [SerializeField] private Soul soulPrefab;
+    [SerializeField] private Transform spawnLocation;
+    [SerializeField] private UltEvent<Soul> onSoulSpawnedEvent;
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         

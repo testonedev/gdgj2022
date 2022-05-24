@@ -2,28 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Afterlife { Heaven, Hell }
+public enum Alignment { Heaven, Hell }
 
-public class GameManager : MonoBehaviour
-{
-    
-    
-    private HellManager hellManager;
-    private HeavenManager heavenManager;
+public class GameManager : Singleton<GameManager>
+{    
+    [SerializeField] private HeavenManager heavenManager;
+    [SerializeField] private HellManager hellManager;
+    [SerializeField] private int heavenStartingPoints = 20;
+    [SerializeField] private int hellStartingPoints = 20;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        heavenManager.AddSoulPoints(heavenStartingPoints);
+        hellManager.AddSoulPoints(hellStartingPoints);
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
 
-    public static void SoulWentToAfterlife(Afterlife afterlifePlace, int alignmentPoints)
+    public void SoulWentToAfterlife(Alignment afterlifePlace, int alignmentPoints)
     {
         throw new System.NotImplementedException();
     }

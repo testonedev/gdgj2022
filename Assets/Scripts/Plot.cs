@@ -1,35 +1,68 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Plot : MonoBehaviour
-{   
-    public Afterlife alignment;
-    public int indexNumber;
-    private ParkManager parkManager;
+public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+{
+    [SerializeField] private GameObject highlightIndicator;
+    [SerializeField] private GameObject selectedIndicator;
+
+    private int indexNumber;
     private int upgradeLevel;
+    private int pointsPerTick;
+    private int pointsPerInteraction;
+    private Alignment alignment;
+    private ParkManager parkManager;
 
-    // Start is called before the first frame update
-    void Start()
+    public int IndexNumber { get => indexNumber; }
+    public int UpgradeLevel { get => upgradeLevel; }
+    public Alignment Alignment { get => alignment; }
+    public ParkManager ParkManager { get => parkManager; }
+
+    public void Initialize(ParkManager parkManager, int indexNumber)
     {
-        
+        this.parkManager = parkManager;
+        alignment = parkManager.Alignment;
+        this.indexNumber = indexNumber;
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual void Tick()
     {
-        
+        parkManager.AddSoulPoints(pointsPerTick);
     }
 
+    // NOTE: Not sure if we need this still
     public virtual int GetAlignmentPoints()
     {
-        //throw new System.NotImplementedException();
-
-        return 3;
+        return pointsPerInteraction;
     }
 
     public bool UpgradePlot()
     {
-        return true;
+        if (parkManager.SpendSoulPoints(parkManager.GetUpgradeCost(upgradeLevel, indexNumber)))
+        {
+            upgradeLevel++;
+            pointsPerInteraction += upgradeLevel * 10;
+            pointsPerTick += upgradeLevel;
+
+            return true;
+        }
+        return false;
+    }
+
+    public virtual void Interact(Soul soulThatInteracted)
+    {
+        parkManager.AddSoulPoints(pointsPerInteraction);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        highlightIndicator.SetActive(true);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        highlightIndicator.SetActive(false);
     }
 }
