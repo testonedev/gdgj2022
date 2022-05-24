@@ -4,18 +4,19 @@ using UnityEngine;
 
 public enum Alignment { Heaven, Hell }
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {    
-    private HellManager hellManager;
-    private HeavenManager heavenManager;
+    [SerializeField] private HeavenManager heavenManager;
+    [SerializeField] private HellManager hellManager;
+    [SerializeField] private int heavenStartingPoints = 20;
+    [SerializeField] private int hellStartingPoints = 20;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        heavenManager.AddSoulPoints(heavenStartingPoints);
+        hellManager.AddSoulPoints(hellStartingPoints);
     }
 
-    // Update is called once per frame
     void Update()
     {
         

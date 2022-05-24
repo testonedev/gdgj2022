@@ -32,6 +32,7 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         parkManager.AddSoulPoints(pointsPerTick);
     }
 
+    // NOTE: Not sure if we need this still
     public virtual int GetAlignmentPoints()
     {
         return pointsPerInteraction;
@@ -48,6 +49,11 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             return true;
         }
         return false;
+    }
+
+    public virtual void Interact(Soul soulThatInteracted)
+    {
+        parkManager.AddSoulPoints(pointsPerInteraction);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
