@@ -10,6 +10,8 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     private int indexNumber;
     private int upgradeLevel;
+    private int pointsPerTick;
+    private int pointsPerInteraction;
     private Alignment alignment;
     private ParkManager parkManager;
 
@@ -27,21 +29,23 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public virtual void Tick()
     {
+        // TODO: Call this from somewhere every "Tick" interval (maybe 1s?)
 
+        parkManager.AddSoulPoints(pointsPerTick);
     }
 
     public virtual int GetAlignmentPoints()
     {
-        //throw new System.NotImplementedException();
-
-        return 3;
+        return pointsPerInteraction;
     }
 
     public bool UpgradePlot()
     {
         if (parkManager.SpendSoulPoints(parkManager.GetUpgradeCost(upgradeLevel, indexNumber)))
         {
-            // TODO: Actually apply upgrades (e.g. increase passive income / interact gains)
+            upgradeLevel++;
+            pointsPerInteraction += upgradeLevel * 10;
+            pointsPerTick += upgradeLevel;
 
             return true;
         }
