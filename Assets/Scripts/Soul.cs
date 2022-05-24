@@ -1,49 +1,138 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using Lean.Pool;
 
 public class Soul : MonoBehaviour
 {
+    public float interactionDistance = 1f;
+    public float interactionTime = 2f;
+    public Transform hellEntrance;
+    public Transform heavenEntrance;
+
+    private NavMeshAgent agent;
     private int alignmentPoints;
-    private Transform hellEntrance;
-    private Transform heavenEntrance;
     private Plot targetPlot;
     private int alignmentVisits;
 
-    // Start is called before the first frame update
-    void Start()
+    //runtime
+    private int currentPlotIndex = 0;
+    private GameManager gameManager;
+    private bool interactionFinished;
+    private Afterlife goingForAfterlife;
+
+    private void OnEnable()
     {
-        
+        agent = GetComponent<NavMeshAgent>();
+        //assuming only have one (singleton)
+        gameManager = FindObjectOfType<GameManager>();
+        currentPlotIndex = 0;
+        alignmentVisits = 0;
+        alignmentPoints = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(PlotInRange())
+        {
+            StartCoroutine(Interaction());
+            targetPlot = null;
+        }
     }
 
-    private void RequestTarget(Vector3 nextLocation)
+    /// <summary>
+    /// Trigger for spawner to start the object
+    /// </summary>
+    public void StartObject()
     {
-        throw new System.NotImplementedException();
-    }
-
-    private void RequestTarget(GameObject nextLocation)
-    {
-        throw new System.NotImplementedException();
+        MoveToNextTarget();
     }
 
     public void FinishConversion()
     {
-        throw new System.NotImplementedException();
+        //in case of point parity, soul goes to hell - easy as that
+
+        if (alignmentPoints > 0) GoToHeaven();
+        else if (alignmentPoints < 0) GoToHell();
+        else
+        {
+            if(alignmentVisits > 0) GoToHeaven();
+            else if (alignmentVisits <0) GoToHell();
+            else GoToHell();
+        }
+    }
+
+    private void MoveToNextTarget()
+    {
+        targetPlot = GameManager.GetTargetPlot(currentPlotIndex);
+        agent.SetDestination(targetPlot.transform.position);
+    }
+
+    private void GoToHeaven()
+    {
+        agent.SetDestination(heavenEntrance.transform.position);
+        goingForAfterlife = Afterlife.Heaven;
+    }
+
+    [ContextMenu("GoToHell")]
+    private void GoToHell()
+    {
+        agent.SetDestination(hellEntrance.transform.position);
+        goingForAfterlife = Afterlife.Hell;
     }
 
     private bool PlotInRange()
     {
-        throw new System.NotImplementedException();
+        if (targetPlot == null) return false;
+        
+        //if in range, use interaction for a while
+
+        if(Vector3.Distance(targetPlot.transform.position, transform.position) <= interactionDistance)
+        {
+            return true;
+        }
+
+        return false;
     }
 
-    private void OnExitWorld()
+    private IEnumerator Interaction()
     {
-        throw new System.NotImplementedException();
+        if (targetPlot.alignment == Afterlife.Heaven) alignmentVisits++;
+        else alignmentVisits--;
+
+        if (targetPlot.alignment == Afterlife.Heaven) alignmentPoints += Mathf.Abs(targetPlot.GetAlignmentPoints());
+        else alignmentPoints -= Mathf.Abs(targetPlot.GetAlignmentPoints());
+
+        interactionFinished = false;
+
+        while (!interactionFinished)
+        {
+            yield return new WaitForSeconds(interactionTime);
+            interactionFinished = true;
+        }
+
+        FinishedInteraction();
+    }
+
+    private void FinishedInteraction()
+    {   
+        currentPlotIndex++;
+
+        if(currentPlotIndex < 7)
+        {
+            MoveToNextTarget();
+        }
+        else
+        {
+            FinishConversion();
+        }
+    }
+
+    public void OnExitWorld()
+    {
+        GameManager.SoulWentToAfterlife(goingForAfterlife, alignmentPoints);
+        LeanPool.Despawn(gameObject);
     }
 }

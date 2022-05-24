@@ -14,8 +14,8 @@
       <FileName>Assets\Scripts\GameManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="heavenManager" />
       <Field Name="hellManager" />
+      <Field Name="heavenManager" />
     </ShowAsAssociation>
   </Class>
   <Class Name="ParkManager">
@@ -37,20 +37,10 @@
   <Class Name="Plot">
     <Position X="7.5" Y="3.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAQAAAABACAAAAQAAAAAAAAgAAAAAIAAAAAAAAAAIAA=</HashCode>
+      <HashCode>AAQAAAABACAAAARAAAAAAAAgAAAAAIAAAAAAAAAAIAA=</HashCode>
       <FileName>Assets\Scripts\Plot.cs</FileName>
       <NewMemberFileName>Assets\Scripts\HellManager.cs</NewMemberFileName>
     </TypeIdentifier>
-  </Class>
-  <Class Name="Soul">
-    <Position X="10.75" Y="3.25" Width="3" />
-    <TypeIdentifier>
-      <HashCode>AAQAAABAACAAAAAAQAAIAAAAAAAAAATAAAAAAAgBAAA=</HashCode>
-      <FileName>Assets\Scripts\Soul.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="targetPlot" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="HellManager">
     <Position X="4.5" Y="3.25" Width="1.75" />
@@ -58,6 +48,16 @@
       <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\HellManager.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="Soul">
+    <Position X="10.75" Y="3.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>BEQAAgBAAAAAAQAAQAAIAAAAFAJAAASAIBAQAAwBGAA=</HashCode>
+      <FileName>Assets\Scripts\Soul.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="targetPlot" />
+    </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

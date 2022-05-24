@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void SoulWentToAfterlife(Afterlife afterlifePlace, int alignmentPoints)
+    public static void SoulWentToAfterlife(Afterlife afterlifePlace, int alignmentPoints)
     {
         throw new System.NotImplementedException();
     }
