@@ -10,8 +10,10 @@ public abstract class ParkManager : MonoBehaviour
     [SerializeField] private int rows = 7;
     [SerializeField] private int columns = 3;
     [SerializeField] private int plotBaseCost = 10;
-    [SerializeField] private int plotUpgradeLevelCostMultiplier = 10;
+    [SerializeField] private int plotUpgradeCostMultiplier = 10;
+    [SerializeField] private float tickRateInSeconds = 1f;
 
+    protected float lastTickTime;
     protected int soulPoints;
     protected int totalCollectedPoints;
     protected Plot[,] plots;
@@ -44,7 +46,14 @@ public abstract class ParkManager : MonoBehaviour
 
     protected virtual void Update()
     {
-        
+        if (Time.time - lastTickTime >= tickRateInSeconds)
+        {
+            lastTickTime = Time.time;
+            foreach (Plot plot in plots)
+            {
+                plot.Tick();
+            }
+        }
     }
 
     public virtual void AddSoulPoints(int pointsToAdd)
@@ -73,7 +82,7 @@ public abstract class ParkManager : MonoBehaviour
         // TODO: Factor in per "Attribute" costs / discounts (e.g. if we have "Charity" cost reduction?)
 
         // e.g. (buy) 10 -> (lvl1 -> lvl2) 10 -> (lvl2 -> lvl3) 22 -> (lvl3 -> lvl4) 36 -> (lvl4 -> lvl5) 52
-        return currentUpgradeLevel == 0 ? plotBaseCost : currentUpgradeLevel * (plotUpgradeLevelCostMultiplier + currentUpgradeLevel - 1);
+        return currentUpgradeLevel == 0 ? plotBaseCost : currentUpgradeLevel * (plotUpgradeCostMultiplier + currentUpgradeLevel - 1);
     }
 
     private void OnDrawGizmos()

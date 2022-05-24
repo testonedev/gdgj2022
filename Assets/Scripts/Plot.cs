@@ -29,8 +29,6 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public virtual void Tick()
     {
-        // TODO: Call this from somewhere every "Tick" interval (maybe 1s?)
-
         parkManager.AddSoulPoints(pointsPerTick);
     }
 
