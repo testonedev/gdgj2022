@@ -16,7 +16,7 @@ public abstract class ParkManager : MonoBehaviour
     protected float lastTickTime;
     protected int soulPoints;
     protected int totalCollectedPoints;
-    protected Plot[,] plots;
+    public Plot[,] plots;
 
     public abstract Alignment Alignment { get; }
     public int SoulPoints { get => soulPoints; }

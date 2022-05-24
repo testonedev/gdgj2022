@@ -24,11 +24,16 @@ public class GameManager : Singleton<GameManager>
 
     public static void SoulWentToAfterlife(Alignment afterlifePlace, int alignmentPoints)
     {
-        throw new System.NotImplementedException();
+        if(afterlifePlace == Alignment.Heaven) Instance.heavenManager.AddSoulPoints(alignmentPoints);
+        else Instance.hellManager.AddSoulPoints(alignmentPoints);
     }
 
     public static Plot GetTargetPlot(int indexNumber)
     {
-        return null;
+        //decide if have to go to the heaven or hell plot
+
+        //SCRIPT LOGIC
+
+        return Instance.heavenManager.plots[indexNumber, 0];
     }
 }

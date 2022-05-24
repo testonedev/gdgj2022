@@ -20,16 +20,18 @@ public class Soul : MonoBehaviour
     private int currentPlotIndex = 0;
     private GameManager gameManager;
     private bool interactionFinished;
-    private Alignment goingForAfterlife;
 
     private void OnEnable()
     {
         agent = GetComponent<NavMeshAgent>();
         //assuming only have one (singleton)
-        gameManager = FindObjectOfType<GameManager>();
+        gameManager = GameManager.Instance;
         currentPlotIndex = 0;
         alignmentVisits = 0;
         alignmentPoints = 0;
+
+        hellEntrance = HellEntrance.Instance.transform;
+        heavenEntrance = HeavenEntrance.Instance.transform;
     }
 
     // Update is called once per frame
@@ -73,14 +75,12 @@ public class Soul : MonoBehaviour
     private void GoToHeaven()
     {
         agent.SetDestination(heavenEntrance.transform.position);
-        goingForAfterlife = Alignment.Heaven;
     }
 
     [ContextMenu("GoToHell")]
     private void GoToHell()
     {
         agent.SetDestination(hellEntrance.transform.position);
-        goingForAfterlife = Alignment.Hell;
     }
 
     private bool PlotInRange()
@@ -130,9 +130,15 @@ public class Soul : MonoBehaviour
         }
     }
 
-    public void OnExitWorld()
+    public void OnExitWorld(Alignment goToAlignment)
     {
-        GameManager.SoulWentToAfterlife(goingForAfterlife, alignmentPoints);
+        GameManager.SoulWentToAfterlife(goToAlignment, alignmentPoints);
         LeanPool.Despawn(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponentInParent<HeavenEntrance>() != null) OnExitWorld(Alignment.Heaven);
+        else if (other.GetComponentInParent<HellEntrance>() != null) OnExitWorld(Alignment.Hell);
     }
 }
