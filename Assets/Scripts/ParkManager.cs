@@ -36,7 +36,7 @@ public abstract class ParkManager : MonoBehaviour
             {
                 Plot newPlot = Instantiate(plotPrefab, grid.transform);
                 newPlot.transform.localPosition = grid.CellToLocal(new Vector3Int(c, 0, r));
-                newPlot.Initialize(this);
+                newPlot.Initialize(this, r);
                 plots[r, c] = newPlot;
             }
         }
@@ -72,7 +72,7 @@ public abstract class ParkManager : MonoBehaviour
     {
         // TODO: Factor in per "Attribute" costs / discounts (e.g. if we have "Charity" cost reduction?)
 
-        // (buy) 10 -> (lvl2) -> 
+        // e.g. (buy) 10 -> (lvl1 -> lvl2) 10 -> (lvl2 -> lvl3) 22 -> (lvl3 -> lvl4) 36 -> (lvl4 -> lvl5) 52
         return currentUpgradeLevel == 0 ? plotBaseCost : currentUpgradeLevel * (plotUpgradeLevelCostMultiplier + currentUpgradeLevel - 1);
     }
 

@@ -18,20 +18,16 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public Alignment Alignment { get => alignment; }
     public ParkManager ParkManager { get => parkManager; }
 
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-        
-    }
-
-    public void Initialize(ParkManager parkManager)
+    public void Initialize(ParkManager parkManager, int indexNumber)
     {
         this.parkManager = parkManager;
         alignment = parkManager.Alignment;
+        this.indexNumber = indexNumber;
+    }
+
+    public virtual void Tick()
+    {
+
     }
 
     public virtual int GetAlignmentPoints()
@@ -54,7 +50,6 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        print("test");
         highlightIndicator.SetActive(true);
     }
 
