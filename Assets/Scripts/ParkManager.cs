@@ -85,6 +85,13 @@ public abstract class ParkManager : MonoBehaviour
         return currentUpgradeLevel == 0 ? plotBaseCost : currentUpgradeLevel * (plotUpgradeCostMultiplier + currentUpgradeLevel - 1);
     }
 
+    public virtual int GetUpgradeCost(Plot plot)
+    {
+        if (plot == null)
+            return 0;
+        return GetUpgradeCost(plot.UpgradeLevel, plot.IndexNumber);
+    }
+
     private void OnDrawGizmos()
     {
         // Visualize grid layout

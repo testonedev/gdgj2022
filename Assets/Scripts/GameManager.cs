@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Alignment { Heaven, Hell }
-
 public class GameManager : Singleton<GameManager>
 {    
     [SerializeField] private HeavenManager heavenManager;
     [SerializeField] private HellManager hellManager;
     [SerializeField] private int heavenStartingPoints = 20;
     [SerializeField] private int hellStartingPoints = 20;
+
+    public HeavenManager HeavenManager { get => heavenManager; }
+    public HellManager HellManager { get => hellManager; }
 
     void Start()
     {
