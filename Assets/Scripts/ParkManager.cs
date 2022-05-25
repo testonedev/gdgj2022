@@ -85,6 +85,26 @@ public abstract class ParkManager : MonoBehaviour
         return currentUpgradeLevel == 0 ? plotBaseCost : currentUpgradeLevel * (plotUpgradeCostMultiplier + currentUpgradeLevel - 1);
     }
 
+    /// <summary>
+    /// Calculates the total score on a given row / index.
+    /// </summary>
+    /// <param name="indexNumber">The row/index number</param>
+    /// <returns>The total score</returns>
+    public int GetIndexScore(int indexNumber)
+    {
+        int sum = 0;
+        for (int i = 0; i < columns; i++)
+        {
+            sum += plots[indexNumber, i].GetAlignmentPoints();
+        }
+        return sum;
+    }
+
+    public virtual Plot GetFirstPlotInRow(int indexNumber)
+    {
+        return plots[indexNumber, 0];
+    }
+
     private void OnDrawGizmos()
     {
         // Visualize grid layout
