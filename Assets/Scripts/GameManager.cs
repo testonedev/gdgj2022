@@ -32,8 +32,17 @@ public class GameManager : Singleton<GameManager>
     {
         //decide if have to go to the heaven or hell plot
 
-        //SCRIPT LOGIC
+        int heavenTotal = Instance.heavenManager.GetIndexScore(indexNumber);
+        int hellTotal = Instance.hellManager.GetIndexScore(indexNumber);
 
-        return Instance.heavenManager.plots[indexNumber, 0];
+        // If the "value" at the given index is the same for both sides, return a random plot
+        if (heavenTotal == hellTotal)
+            return Random.Range(0, 1) == 0 ?
+                Instance.heavenManager.GetFirstPlotInRow(indexNumber) :
+                Instance.hellManager.GetFirstPlotInRow(indexNumber);
+
+        return heavenTotal > hellTotal ?
+            Instance.heavenManager.GetFirstPlotInRow(indexNumber) :
+            Instance.hellManager.GetFirstPlotInRow(indexNumber);
     }
 }
