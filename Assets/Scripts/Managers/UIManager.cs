@@ -6,7 +6,7 @@ public class UIManager : Singleton<UIManager>
 {
     [SerializeField] private Canvas canvasPrefab;
 
-    private PlotWindow plotWindow;
+    private PlotWindowUI plotWindow;
 
     protected override void Awake()
     {
@@ -15,7 +15,7 @@ public class UIManager : Singleton<UIManager>
 
     private void Start()
     {
-        plotWindow = Instantiate(canvasPrefab).GetComponentInChildren<PlotWindow>();
+        plotWindow = Instantiate(canvasPrefab).GetComponentInChildren<PlotWindowUI>();
     }
 
     public void ShowPlotWindow(Plot plot)

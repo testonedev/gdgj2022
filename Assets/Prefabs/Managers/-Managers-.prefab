@@ -193,6 +193,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9070582946492861682}
     m_Modifications:
+    - target: {fileID: 2512598401714066316, guid: bdc7cc09472d4cb42be42a3c8c41f884,
+        type: 3}
+      propertyPath: plotUpgradeCostMultiplier
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2512598401714066322, guid: bdc7cc09472d4cb42be42a3c8c41f884,
         type: 3}
       propertyPath: m_Name
@@ -365,6 +370,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9070582946492861682}
     m_Modifications:
+    - target: {fileID: 694170216233116842, guid: aebcd0296e214bb46bd725aba9fec4a8,
+        type: 3}
+      propertyPath: plotUpgradeCostMultiplier
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 694170216233116843, guid: aebcd0296e214bb46bd725aba9fec4a8,
         type: 3}
       propertyPath: m_RootOrder

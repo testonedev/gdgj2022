@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class PlotWindow : MonoBehaviour
+public class PlotWindowUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI plotNameText;
     [SerializeField] private TextMeshProUGUI upgradeLevelText;
