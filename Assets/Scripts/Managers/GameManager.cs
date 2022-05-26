@@ -38,7 +38,7 @@ public class GameManager : Singleton<GameManager>
 
         // If the "value" at the given index is the same for both sides, return a random plot
         if (heavenTotal == hellTotal)
-            return Random.Range(0, 1) == 0 ?
+            return Random.Range(0, 2) == 0 ?
                 Instance.heavenManager.GetFirstPlotInRow(indexNumber) :
                 Instance.hellManager.GetFirstPlotInRow(indexNumber);
 

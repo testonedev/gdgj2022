@@ -14,13 +14,7 @@ public class PlotWindow : MonoBehaviour
     [SerializeField] private RectTransform upgradePanel;
     [SerializeField] private Button upgradeButton;
 
-    private RectTransform rectTransform;
     private Plot currentPlot;
-
-    private void Awake()
-    {
-        rectTransform = GetComponent<RectTransform>();
-    }
 
     private void Start()
     {
@@ -50,14 +44,6 @@ public class PlotWindow : MonoBehaviour
 
     public void SetPlot(Plot plot)
     {
-        if (currentPlot == plot && currentPlot != null)
-        {
-            // Simply update window position
-            ShowWindow();
-            UpdateWindowPosition();
-            return;
-        }
-
         currentPlot = plot;
 
         if (currentPlot == null)
@@ -68,14 +54,6 @@ public class PlotWindow : MonoBehaviour
 
         ShowWindow();
         UpdateUIElements();
-        UpdateWindowPosition();
-    }
-
-    public void UpdateWindowPosition()
-    {
-        // TODO: Convert this to a point on the canvas as it's in screen space
-        Vector2 origin = InputManager.PointerPosition;
-        rectTransform.anchoredPosition = origin;
     }
 
     public void ShowWindow()
