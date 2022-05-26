@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +17,10 @@ public abstract class ParkManager : MonoBehaviour
     protected float lastTickTime;
     protected int soulPoints;
     protected int totalCollectedPoints;
-    public Plot[,] plots;
+    protected Plot[,] plots;
+
+    public event Action<int> OnSoulPointsChanged;
+    public event Action<int> OnTotalPointsChanged;
 
     public abstract Alignment Alignment { get; }
     public int SoulPoints { get => soulPoints; }
@@ -58,8 +62,8 @@ public abstract class ParkManager : MonoBehaviour
 
     public virtual void AddSoulPoints(int pointsToAdd)
     {
-        soulPoints += pointsToAdd;
-        totalCollectedPoints += pointsToAdd;
+        SetSoulPoints(soulPoints + pointsToAdd);
+        SetTotalPoints(totalCollectedPoints + pointsToAdd);
     }
 
     /// <summary>
@@ -71,7 +75,7 @@ public abstract class ParkManager : MonoBehaviour
     {
         if (soulPoints >= cost)
         {
-            soulPoints -= cost;
+            SetSoulPoints(soulPoints - cost);
             return true;
         }
         return false;
@@ -85,6 +89,13 @@ public abstract class ParkManager : MonoBehaviour
         return currentUpgradeLevel == 0 ? plotBaseCost : currentUpgradeLevel * (plotUpgradeCostMultiplier + currentUpgradeLevel - 1);
     }
 
+    public virtual int GetUpgradeCost(Plot plot)
+    {
+        if (plot == null)
+            return 0;
+        return GetUpgradeCost(plot.UpgradeLevel, plot.IndexNumber);
+    }
+    
     /// <summary>
     /// Calculates the total score on a given row / index.
     /// </summary>
@@ -115,5 +126,19 @@ public abstract class ParkManager : MonoBehaviour
                 Gizmos.DrawWireCube(grid.CellToWorld(new Vector3Int(c, 0, r)), new Vector3(1f, 0, 1f));
             }
         }
+    }
+
+    public void SetSoulPoints(int soulPoints, bool invoke = true)
+    {
+        this.soulPoints = soulPoints;
+        if (invoke)
+            OnSoulPointsChanged?.Invoke(soulPoints);
+    }
+
+    public void SetTotalPoints(int totalPoints, bool invoke = true)
+    {
+        totalCollectedPoints = totalPoints;
+        if (invoke)
+            OnTotalPointsChanged?.Invoke(totalCollectedPoints);
     }
 }

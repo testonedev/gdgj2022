@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Alignment { Heaven, Hell }
-
 public class GameManager : Singleton<GameManager>
 {    
     [SerializeField] private HeavenManager heavenManager;
     [SerializeField] private HellManager hellManager;
     [SerializeField] private int heavenStartingPoints = 20;
     [SerializeField] private int hellStartingPoints = 20;
+
+    public HeavenManager HeavenManager { get => heavenManager; }
+    public HellManager HellManager { get => hellManager; }
 
     void Start()
     {
@@ -37,7 +38,7 @@ public class GameManager : Singleton<GameManager>
 
         // If the "value" at the given index is the same for both sides, return a random plot
         if (heavenTotal == hellTotal)
-            return Random.Range(0, 1) == 0 ?
+            return Random.Range(0, 2) == 0 ?
                 Instance.heavenManager.GetFirstPlotInRow(indexNumber) :
                 Instance.hellManager.GetFirstPlotInRow(indexNumber);
 
