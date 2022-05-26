@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gravestone : MonoBehaviour
+public class ScaleVariance : MonoBehaviour
 {
     public Vector2 minMaxScale = new Vector2(0.8f, 1.2f);
     private Vector3 defaultScale;
