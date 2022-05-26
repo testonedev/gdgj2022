@@ -3421,7 +3421,7 @@ MonoBehaviour:
   soulPrefab: {fileID: 4934350720720545060, guid: e661c5b90b572e2488bc51cd9da6aac4,
     type: 3}
   spawnLocation: {fileID: 1069149306}
-  spawnRate: 1
+  spawnRate: 0.3
   onSoulSpawnedEvent:
     _PersistentCalls: []
 --- !u!4 &1447963291
@@ -3586,7 +3586,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472064865}
-  m_LocalRotation: {x: 0.24216938, y: -0.28465694, z: 0.07456202, w: 0.924535}
+  m_LocalRotation: {x: 0.24216938, y: -0.2846569, z: 0.07456201, w: 0.924535}
   m_LocalPosition: {x: 20, y: 20, z: -29.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4089,7 +4089,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2062011042}
-  m_LocalRotation: {x: 0.24216938, y: -0.28465694, z: 0.07456202, w: 0.924535}
+  m_LocalRotation: {x: 0.24216938, y: -0.2846569, z: 0.07456201, w: 0.924535}
   m_LocalPosition: {x: 20, y: 20, z: -29.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4341,6 +4341,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Gate
+      objectReference: {fileID: 0}
+    - target: {fileID: 8561272475884160230, guid: 5a791b36fcd64cc4d8d75909dda737df,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a791b36fcd64cc4d8d75909dda737df, type: 3}
