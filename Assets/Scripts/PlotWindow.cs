@@ -24,7 +24,7 @@ public class PlotWindow : MonoBehaviour
 
     private void Start()
     {
-        
+        gameObject.SetActive(false);
     }
 
     private void OnEnable()
