@@ -37,6 +37,21 @@
                 "value": "{\"m_Value\":true}"
             },
             {
+                "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "Scattering.UsePivotForPlacement",
+                "value": "{\"m_Value\":false}"
+            },
+            {
+                "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "Scattering.ParentObjectsWithSurface",
+                "value": "{\"m_Value\":true}"
+            },
+            {
+                "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "Scattering.AvoidOverlappingObjects",
+                "value": "{\"m_Value\":false}"
+            },
+            {
                 "type": "UnityEngine.Polybrush.BrushMirror, Unity.Polybrush, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "Brush.MirrorAxis",
                 "value": "{\"m_Value\":0}"
@@ -62,6 +77,11 @@
                 "value": "{\"m_Value\":1}"
             },
             {
+                "type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "ScatteringEditor.PreviewThumSize",
+                "value": "{\"m_Value\":64}"
+            },
+            {
                 "type": "UnityEngine.Polybrush.PolyDirection, Unity.Polybrush, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "RaiseLowerBrush.Direction",
                 "value": "{\"m_Value\":0}"
@@ -75,6 +95,11 @@
                 "type": "System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "Brush.VertexBillboardSize",
                 "value": "{\"m_Value\":2.0}"
+            },
+            {
+                "type": "UnityEditor.Polybrush.PrefabLoadout, Unity.Polybrush.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "key": "ScatteringEditor.userLoadout",
+                "value": "{\"m_Value\":{\"infos\":[{\"palette\":{\"fileID\":11400000,\"guid\":\"5be5d0fbce5b3de49a48298dc50d4d10\",\"type\":2},\"prefab\":{\"fileID\":919132149155446097,\"guid\":\"34694265c8628b74faa92fc81f441afd\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"5be5d0fbce5b3de49a48298dc50d4d10\",\"type\":2},\"prefab\":{\"fileID\":919132149155446097,\"guid\":\"008819cc8d364b24cb6515433d7b1f76\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"5be5d0fbce5b3de49a48298dc50d4d10\",\"type\":2},\"prefab\":{\"fileID\":919132149155446097,\"guid\":\"a7961543d693f4d419743a6528a4fd5d\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"5be5d0fbce5b3de49a48298dc50d4d10\",\"type\":2},\"prefab\":{\"fileID\":919132149155446097,\"guid\":\"c0c7c202bf3c2204d968302c9bcf92ad\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"5be5d0fbce5b3de49a48298dc50d4d10\",\"type\":2},\"prefab\":{\"fileID\":919132149155446097,\"guid\":\"9678b3d07f8ceae429637614b5f4c572\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"5be5d0fbce5b3de49a48298dc50d4d10\",\"type\":2},\"prefab\":{\"fileID\":919132149155446097,\"guid\":\"e7cc28d8236a3b3499d3f25d7ab4a0e8\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"5be5d0fbce5b3de49a48298dc50d4d10\",\"type\":2},\"prefab\":{\"fileID\":919132149155446097,\"guid\":\"470341481cd2d244a9154009923ed250\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"5be5d0fbce5b3de49a48298dc50d4d10\",\"type\":2},\"prefab\":{\"fileID\":919132149155446097,\"guid\":\"f1a79a0b9ad311948b4965aaa17b8568\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"5be5d0fbce5b3de49a48298dc50d4d10\",\"type\":2},\"prefab\":{\"fileID\":919132149155446097,\"guid\":\"84830e89ea41b9a41ad4cb3ec9827995\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"5be5d0fbce5b3de49a48298dc50d4d10\",\"type\":2},\"prefab\":{\"fileID\":919132149155446097,\"guid\":\"e064644c04fcd0248b18984d36e5430d\",\"type\":3}}]}}"
             }
         ]
     }
