@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, IPointerExitHandler
 {
     [SerializeField] private GameObject highlightIndicator;
     [SerializeField] private GameObject selectedIndicator;
@@ -17,6 +17,8 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public int IndexNumber { get => indexNumber; }
     public int UpgradeLevel { get => upgradeLevel; }
+    public int PointsPerTick { get => pointsPerTick; }
+    public int PointsPerInteraction { get => pointsPerInteraction; }
     public Alignment Alignment { get => alignment; }
     public ParkManager ParkManager { get => parkManager; }
 
@@ -43,7 +45,7 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (parkManager.SpendSoulPoints(parkManager.GetUpgradeCost(upgradeLevel, indexNumber)))
         {
             upgradeLevel++;
-            pointsPerInteraction += upgradeLevel * 10;
+            pointsPerInteraction += upgradeLevel * 2;
             pointsPerTick += upgradeLevel;
 
             return true;
@@ -64,5 +66,10 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnPointerExit(PointerEventData eventData)
     {
         highlightIndicator.SetActive(false);
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        UIManager.Instance.ShowPlotWindow(this);
     }
 }

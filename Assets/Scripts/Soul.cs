@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using Lean.Pool;
+using UltEvents;
 
 public class Soul : MonoBehaviour
 {
@@ -10,6 +11,12 @@ public class Soul : MonoBehaviour
     public float interactionTime = 2f;
     public Transform hellEntrance;
     public Transform heavenEntrance;
+
+    public ParticleSystem gainFaith;
+    public ParticleSystem loseFaith;
+
+    public UltEvent onEnable;
+    public UltEvent onDisable;
 
     private NavMeshAgent agent;
     private int alignmentPoints;
@@ -49,6 +56,7 @@ public class Soul : MonoBehaviour
     /// </summary>
     public void StartObject()
     {
+        onEnable.Invoke();
         MoveToNextTarget();
     }
 
@@ -99,8 +107,16 @@ public class Soul : MonoBehaviour
 
     private IEnumerator Interaction()
     {
-        if (targetPlot.Alignment == Alignment.Heaven) alignmentVisits++;
-        else alignmentVisits--;
+        if (targetPlot.Alignment == Alignment.Heaven)
+        {
+            gainFaith.Play(true);
+            alignmentVisits++;
+        }
+        else
+        {
+            loseFaith.Play(true);
+            alignmentVisits--;
+        }
 
         if (targetPlot.Alignment == Alignment.Heaven) alignmentPoints += Mathf.Abs(targetPlot.GetAlignmentPoints());
         else alignmentPoints -= Mathf.Abs(targetPlot.GetAlignmentPoints());
@@ -132,6 +148,7 @@ public class Soul : MonoBehaviour
 
     public void OnExitWorld(Alignment goToAlignment)
     {
+        onDisable.Invoke();
         GameManager.SoulWentToAfterlife(goToAlignment, alignmentPoints);
         LeanPool.Despawn(gameObject);
     }
