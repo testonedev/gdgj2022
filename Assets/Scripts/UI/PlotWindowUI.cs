@@ -72,8 +72,8 @@ public class PlotWindowUI : MonoBehaviour
             return;
 
         upgradeLevelText.text = $"{currentPlot.UpgradeLevel}";
-        pointsPerTickText.text = $"P/Tick: {currentPlot.PointsPerTick}";
-        pointsPerInteractionText.text = $"P/Interaction: {currentPlot.PointsPerInteraction}";
+        pointsPerTickText.text = $"Points/Tick: {currentPlot.PointsPerTick}";
+        pointsPerInteractionText.text = $"Points/Visit: {currentPlot.PointsPerInteraction}";
 
         if (currentPlot.Alignment == Alignment.Heaven)
         {
