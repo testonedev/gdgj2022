@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4474103810805300077}
   - component: {fileID: 6640855955720073356}
   - component: {fileID: 1334856700212593206}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GainFaith
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4879,7 +4879,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1109887687311795238}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: VFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4915,7 +4915,7 @@ GameObject:
   - component: {fileID: 4596912184635555085}
   - component: {fileID: 8287688398024666891}
   - component: {fileID: 9137960128212771088}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9789,7 +9789,7 @@ GameObject:
   - component: {fileID: 4934350720720545058}
   - component: {fileID: 4934350720720545086}
   - component: {fileID: 4934350720720545057}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Soul
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9958,7 +9958,7 @@ GameObject:
   - component: {fileID: 6378641379004777195}
   - component: {fileID: 1574227380884817989}
   - component: {fileID: 3082457564437904955}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LoseFaith
   m_TagString: Untagged
   m_Icon: {fileID: 0}

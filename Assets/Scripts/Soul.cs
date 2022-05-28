@@ -149,7 +149,7 @@ public class Soul : MonoBehaviour
     public void OnExitWorld(Alignment goToAlignment)
     {
         onDisable.Invoke();
-        GameManager.SoulWentToAfterlife(goToAlignment, alignmentPoints);
+        GameManager.SoulWentToAfterlife(goToAlignment, Mathf.Abs(alignmentPoints));
         LeanPool.Despawn(gameObject);
     }
 
