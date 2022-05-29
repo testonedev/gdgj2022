@@ -9,17 +9,20 @@ public class Soul : MonoBehaviour
 {
     public float interactionDistance = 1f;
     public float interactionTime = 2f;
-    public Transform hellEntrance;
-    public Transform heavenEntrance;
 
-    public ParticleSystem gainFaith;
-    public ParticleSystem loseFaith;
+    public GameObject modelBlue;
+    public GameObject modelRed;
+
+    public UltEvent gainFaith;
+    public UltEvent loseFaith;
 
     public UltEvent onEnable;
     public UltEvent onDisable;
 
     private NavMeshAgent agent;
     private int alignmentPoints;
+    private Transform hellEntrance;
+    private Transform heavenEntrance;
     private Plot targetPlot;
     private int alignmentVisits;
 
@@ -109,17 +112,28 @@ public class Soul : MonoBehaviour
     {
         if (targetPlot.Alignment == Alignment.Heaven)
         {
-            gainFaith.Play(true);
+            gainFaith.Invoke();
             alignmentVisits++;
         }
         else
         {
-            loseFaith.Play(true);
+            loseFaith.Invoke();
             alignmentVisits--;
         }
 
         if (targetPlot.Alignment == Alignment.Heaven) alignmentPoints += Mathf.Abs(targetPlot.GetAlignmentPoints());
         else alignmentPoints -= Mathf.Abs(targetPlot.GetAlignmentPoints());
+
+        if (alignmentPoints >= 0)
+        {
+            modelBlue.SetActive(true);
+            modelRed.SetActive(false);
+        }
+        else
+        {
+            modelBlue.SetActive(false);
+            modelRed.SetActive(true);
+        }
 
         interactionFinished = false;
 
@@ -150,7 +164,7 @@ public class Soul : MonoBehaviour
     {
         onDisable.Invoke();
         GameManager.SoulWentToAfterlife(goToAlignment, Mathf.Abs(alignmentPoints));
-        LeanPool.Despawn(gameObject);
+        LeanPool.Despawn(gameObject, 0.5f);
     }
 
     private void OnTriggerEnter(Collider other)
