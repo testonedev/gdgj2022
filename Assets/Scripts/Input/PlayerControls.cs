@@ -50,6 +50,174 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Selection"",
+            ""id"": ""308ebedb-52d9-4433-b15f-5ca4503a8f42"",
+            ""actions"": [
+                {
+                    ""name"": ""Plot1"",
+                    ""type"": ""Button"",
+                    ""id"": ""b0dfd851-5326-40a5-a750-dce3f3a5c010"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Plot2"",
+                    ""type"": ""Button"",
+                    ""id"": ""988b2368-d603-406b-9090-492e8acd1d3e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Plot3"",
+                    ""type"": ""Button"",
+                    ""id"": ""eb9619c4-e9db-4996-b727-c10d0df13368"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Plot4"",
+                    ""type"": ""Button"",
+                    ""id"": ""ea950e8f-589d-48f3-a012-4666739d4093"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Plot5"",
+                    ""type"": ""Button"",
+                    ""id"": ""e7b3bab4-04f6-49bb-a9e6-b846b76b1c99"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Plot6"",
+                    ""type"": ""Button"",
+                    ""id"": ""23f7eeb1-fad6-4ed3-988f-0f754665da97"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Plot7"",
+                    ""type"": ""Button"",
+                    ""id"": ""cdca3b3c-d81e-403c-8906-388e1881bae1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Upgrade"",
+                    ""type"": ""Button"",
+                    ""id"": ""50871912-dd98-4b58-82aa-6d016d6f7c3a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""694b0907-2979-4b58-a018-f1626024c9f1"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Plot1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8c5e4622-7416-4245-be3e-db12b8adc5c3"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Plot2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a767dd6b-cdc3-42e0-9f50-d267357be46c"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Plot3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d1b7b68b-5fdd-4689-ad1a-3b907017988d"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Plot4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""89bdd2f9-47f5-4b58-a8b2-83ce0673fd8b"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Plot5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8e23b2bd-15bf-497f-8dff-4b196d0b13e4"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Plot6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4c2cdd80-cb23-4a55-b22d-91e1b58559da"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Plot7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4ef0871e-4bb4-4a3b-bc26-7430829c8dc7"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Upgrade"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -57,6 +225,16 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         // Pointer
         m_Pointer = asset.FindActionMap("Pointer", throwIfNotFound: true);
         m_Pointer_Position = m_Pointer.FindAction("Position", throwIfNotFound: true);
+        // Selection
+        m_Selection = asset.FindActionMap("Selection", throwIfNotFound: true);
+        m_Selection_Plot1 = m_Selection.FindAction("Plot1", throwIfNotFound: true);
+        m_Selection_Plot2 = m_Selection.FindAction("Plot2", throwIfNotFound: true);
+        m_Selection_Plot3 = m_Selection.FindAction("Plot3", throwIfNotFound: true);
+        m_Selection_Plot4 = m_Selection.FindAction("Plot4", throwIfNotFound: true);
+        m_Selection_Plot5 = m_Selection.FindAction("Plot5", throwIfNotFound: true);
+        m_Selection_Plot6 = m_Selection.FindAction("Plot6", throwIfNotFound: true);
+        m_Selection_Plot7 = m_Selection.FindAction("Plot7", throwIfNotFound: true);
+        m_Selection_Upgrade = m_Selection.FindAction("Upgrade", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -145,8 +323,108 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         }
     }
     public PointerActions @Pointer => new PointerActions(this);
+
+    // Selection
+    private readonly InputActionMap m_Selection;
+    private ISelectionActions m_SelectionActionsCallbackInterface;
+    private readonly InputAction m_Selection_Plot1;
+    private readonly InputAction m_Selection_Plot2;
+    private readonly InputAction m_Selection_Plot3;
+    private readonly InputAction m_Selection_Plot4;
+    private readonly InputAction m_Selection_Plot5;
+    private readonly InputAction m_Selection_Plot6;
+    private readonly InputAction m_Selection_Plot7;
+    private readonly InputAction m_Selection_Upgrade;
+    public struct SelectionActions
+    {
+        private @PlayerControls m_Wrapper;
+        public SelectionActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Plot1 => m_Wrapper.m_Selection_Plot1;
+        public InputAction @Plot2 => m_Wrapper.m_Selection_Plot2;
+        public InputAction @Plot3 => m_Wrapper.m_Selection_Plot3;
+        public InputAction @Plot4 => m_Wrapper.m_Selection_Plot4;
+        public InputAction @Plot5 => m_Wrapper.m_Selection_Plot5;
+        public InputAction @Plot6 => m_Wrapper.m_Selection_Plot6;
+        public InputAction @Plot7 => m_Wrapper.m_Selection_Plot7;
+        public InputAction @Upgrade => m_Wrapper.m_Selection_Upgrade;
+        public InputActionMap Get() { return m_Wrapper.m_Selection; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(SelectionActions set) { return set.Get(); }
+        public void SetCallbacks(ISelectionActions instance)
+        {
+            if (m_Wrapper.m_SelectionActionsCallbackInterface != null)
+            {
+                @Plot1.started -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPlot1;
+                @Plot1.performed -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPlot1;
+                @Plot1.canceled -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPlot1;
+                @Plot2.started -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPlot2;
+                @Plot2.performed -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPlot2;
+                @Plot2.canceled -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPlot2;
+                @Plot3.started -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPlot3;
+                @Plot3.performed -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPlot3;
+                @Plot3.canceled -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPlot3;
+                @Plot4.started -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPlot4;
+                @Plot4.performed -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPlot4;
+                @Plot4.canceled -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPlot4;
+                @Plot5.started -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPlot5;
+                @Plot5.performed -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPlot5;
+                @Plot5.canceled -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPlot5;
+                @Plot6.started -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPlot6;
+                @Plot6.performed -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPlot6;
+                @Plot6.canceled -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPlot6;
+                @Plot7.started -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPlot7;
+                @Plot7.performed -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPlot7;
+                @Plot7.canceled -= m_Wrapper.m_SelectionActionsCallbackInterface.OnPlot7;
+                @Upgrade.started -= m_Wrapper.m_SelectionActionsCallbackInterface.OnUpgrade;
+                @Upgrade.performed -= m_Wrapper.m_SelectionActionsCallbackInterface.OnUpgrade;
+                @Upgrade.canceled -= m_Wrapper.m_SelectionActionsCallbackInterface.OnUpgrade;
+            }
+            m_Wrapper.m_SelectionActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Plot1.started += instance.OnPlot1;
+                @Plot1.performed += instance.OnPlot1;
+                @Plot1.canceled += instance.OnPlot1;
+                @Plot2.started += instance.OnPlot2;
+                @Plot2.performed += instance.OnPlot2;
+                @Plot2.canceled += instance.OnPlot2;
+                @Plot3.started += instance.OnPlot3;
+                @Plot3.performed += instance.OnPlot3;
+                @Plot3.canceled += instance.OnPlot3;
+                @Plot4.started += instance.OnPlot4;
+                @Plot4.performed += instance.OnPlot4;
+                @Plot4.canceled += instance.OnPlot4;
+                @Plot5.started += instance.OnPlot5;
+                @Plot5.performed += instance.OnPlot5;
+                @Plot5.canceled += instance.OnPlot5;
+                @Plot6.started += instance.OnPlot6;
+                @Plot6.performed += instance.OnPlot6;
+                @Plot6.canceled += instance.OnPlot6;
+                @Plot7.started += instance.OnPlot7;
+                @Plot7.performed += instance.OnPlot7;
+                @Plot7.canceled += instance.OnPlot7;
+                @Upgrade.started += instance.OnUpgrade;
+                @Upgrade.performed += instance.OnUpgrade;
+                @Upgrade.canceled += instance.OnUpgrade;
+            }
+        }
+    }
+    public SelectionActions @Selection => new SelectionActions(this);
     public interface IPointerActions
     {
         void OnPosition(InputAction.CallbackContext context);
+    }
+    public interface ISelectionActions
+    {
+        void OnPlot1(InputAction.CallbackContext context);
+        void OnPlot2(InputAction.CallbackContext context);
+        void OnPlot3(InputAction.CallbackContext context);
+        void OnPlot4(InputAction.CallbackContext context);
+        void OnPlot5(InputAction.CallbackContext context);
+        void OnPlot6(InputAction.CallbackContext context);
+        void OnPlot7(InputAction.CallbackContext context);
+        void OnUpgrade(InputAction.CallbackContext context);
     }
 }

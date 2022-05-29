@@ -7,7 +7,7 @@ public abstract class ParkManager : MonoBehaviour
 {
     [Tooltip("Reference to a GameObject with a Grid component.")]
     [SerializeField] private Grid grid;
-    [SerializeField] private Plot plotPrefab;
+    [SerializeField] private Plot[] plotPrefabs;
     [SerializeField] private int rows = 7;
     [SerializeField] private int columns = 3;
     [SerializeField] private int plotBaseCost = 10;
@@ -40,7 +40,7 @@ public abstract class ParkManager : MonoBehaviour
         {
             for (int c = 0; c < columns; c++)
             {
-                Plot newPlot = Instantiate(plotPrefab, grid.transform);
+                Plot newPlot = Instantiate(plotPrefabs[r], grid.transform);
                 newPlot.transform.localPosition = grid.CellToLocal(new Vector3Int(c, 0, r));
                 newPlot.Initialize(this, r);
                 plots[r, c] = newPlot;

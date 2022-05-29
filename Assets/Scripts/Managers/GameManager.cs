@@ -11,12 +11,14 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private int hellStartingPoints = 20;
     [SerializeField] private int scoreGoal = 1000;
     [SerializeField] private bool gameOver = false;
+    [SerializeField] private int maxUpgradeLevel = 10;
 
     public UltEvent heavenWins;
     public UltEvent hellWins;
 
     public HeavenManager HeavenManager { get => heavenManager; }
     public HellManager HellManager { get => hellManager; }
+    public int MaxUpgradeLevel { get => maxUpgradeLevel; }
 
     void Start()
     {

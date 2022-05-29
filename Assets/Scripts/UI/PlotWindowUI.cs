@@ -31,7 +31,7 @@ public class PlotWindowUI : MonoBehaviour
         upgradeButton.onClick.RemoveListener(TryUpgradeCurrentPlot);
     }
 
-    private void TryUpgradeCurrentPlot()
+    public void TryUpgradeCurrentPlot()
     {
         if (currentPlot == null)
             return;
