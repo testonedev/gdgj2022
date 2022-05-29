@@ -360,7 +360,7 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 5
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 1
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -5299,8 +5299,8 @@ MonoBehaviour:
     - _Target: {fileID: 1058879607670589298}
       _MethodName: Spin
       _PersistentArguments: []
-    - _Target: {fileID: 7462093369677071889}
-      _MethodName: Play
+    - _Target: {fileID: 4600530113907804077}
+      _MethodName: SetActive
       _PersistentArguments:
       - _Type: 1
         _Int: 1
