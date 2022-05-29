@@ -44,13 +44,13 @@ GameObject:
   - component: {fileID: 4474103810805300077}
   - component: {fileID: 6640855955720073356}
   - component: {fileID: 1334856700212593206}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: GainFaith
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4474103810805300077
 Transform:
   m_ObjectHideFlags: 0
@@ -74,16 +74,16 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 867899528863608808}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 1
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 1
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -139,7 +139,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -1006,7 +1006,7 @@ ParticleSystem:
     m_BurstCount: 1
     m_Bursts:
     - serializedVersion: 2
-      time: 0
+      time: 0.1
       countCurve:
         serializedVersion: 2
         minMaxState: 0
@@ -4914,13 +4914,13 @@ GameObject:
   - component: {fileID: 1505077199230354953}
   - component: {fileID: 4404992847021508167}
   - component: {fileID: 5829998307927907976}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Despawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1505077199230354953
 Transform:
   m_ObjectHideFlags: 0
@@ -4944,16 +4944,16 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1983192473298384610}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 1
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 1
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -5876,7 +5876,7 @@ ParticleSystem:
     m_BurstCount: 1
     m_Bursts:
     - serializedVersion: 2
-      time: 0
+      time: 0.1
       countCurve:
         serializedVersion: 2
         minMaxState: 0
@@ -9782,7 +9782,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1109887687311795238}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: VFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9820,7 +9820,7 @@ GameObject:
   - component: {fileID: 4596912184635555085}
   - component: {fileID: 8287688398024666891}
   - component: {fileID: 9137960128212771088}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9852,14 +9852,14 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 5
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 1
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -10782,7 +10782,7 @@ ParticleSystem:
     m_BurstCount: 1
     m_Bursts:
     - serializedVersion: 2
-      time: 0
+      time: 0.1
       countCurve:
         serializedVersion: 2
         minMaxState: 0
@@ -14782,14 +14782,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02aa469b601383d4ba4bb3d028cbe9ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDistance: 3
+  interactionDistance: 2
   interactionTime: 2
   modelBlue: {fileID: 7270529125384260021}
   modelRed: {fileID: 7066587588179003174}
   gainFaith:
     _PersistentCalls:
-    - _Target: {fileID: 6640855955720073356}
-      _MethodName: Play
+    - _Target: {fileID: 867899528863608808}
+      _MethodName: SetActive
       _PersistentArguments:
       - _Type: 1
         _Int: 1
@@ -14804,8 +14804,8 @@ MonoBehaviour:
       _PersistentArguments: []
   loseFaith:
     _PersistentCalls:
-    - _Target: {fileID: 1574227380884817989}
-      _MethodName: Play
+    - _Target: {fileID: 5167727153888324804}
+      _MethodName: SetActive
       _PersistentArguments:
       - _Type: 1
         _Int: 1
@@ -14820,8 +14820,8 @@ MonoBehaviour:
       _PersistentArguments: []
   onEnable:
     _PersistentCalls:
-    - _Target: {fileID: 8287688398024666891}
-      _MethodName: Play
+    - _Target: {fileID: 1983192473298384610}
+      _MethodName: SetActive
       _PersistentArguments:
       - _Type: 1
         _Int: 1
@@ -14833,11 +14833,8 @@ MonoBehaviour:
         _Object: {fileID: 0}
   onDisable:
     _PersistentCalls:
-    - _Target: {fileID: 0}
-      _MethodName: AudioManager, Scripts, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null.PlayGateSFX
-      _PersistentArguments: []
-    - _Target: {fileID: 4404992847021508167}
-      _MethodName: Play
+    - _Target: {fileID: 1983192473298384610}
+      _MethodName: SetActive
       _PersistentArguments:
       - _Type: 1
         _Int: 1
@@ -14847,6 +14844,9 @@ MonoBehaviour:
         _Z: 0
         _W: 0
         _Object: {fileID: 0}
+    - _Target: {fileID: 0}
+      _MethodName: AudioManager, Scripts, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null.PlayGateSFX
+      _PersistentArguments: []
 --- !u!1 &5167727153888324804
 GameObject:
   m_ObjectHideFlags: 0
@@ -14858,13 +14858,13 @@ GameObject:
   - component: {fileID: 6378641379004777195}
   - component: {fileID: 1574227380884817989}
   - component: {fileID: 3082457564437904955}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: LoseFaith
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6378641379004777195
 Transform:
   m_ObjectHideFlags: 0
@@ -14888,16 +14888,16 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5167727153888324804}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 1
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 1
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -14953,7 +14953,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -15820,7 +15820,7 @@ ParticleSystem:
     m_BurstCount: 1
     m_Bursts:
     - serializedVersion: 2
-      time: 0
+      time: 0.1
       countCurve:
         serializedVersion: 2
         minMaxState: 0
@@ -20152,7 +20152,7 @@ GameObject:
   - component: {fileID: 4656915306762375177}
   - component: {fileID: 8720515070608710500}
   - component: {fileID: 2848973328231398405}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}

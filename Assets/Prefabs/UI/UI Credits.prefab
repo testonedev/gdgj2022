@@ -704,7 +704,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 322.9}
+  m_SizeDelta: {x: 0, y: 398.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9148297539474166269
 CanvasRenderer:
@@ -734,7 +734,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Game: anonanonymousdev and TestOneDev
+  m_text: 'Game: Code Enjoyer and TestOneDev
 
     Textures: ambientcg.com
 
@@ -744,15 +744,17 @@ MonoBehaviour:
     Waterfall Sound: Nox_Sound
     at freesound.org
 
-    Low Poly Hand: ZOSK Studios at sketchfab.com
+    Other Sounds: Samulis at freesound.org
 
-    Environment
-    Models: Quaternius.com
+    Low Poly Hand:
+    ZOSK Studios at sketchfab.com
 
-    Lean Pool Asset: Carlos Wilkes
+    Environment Models: Quaternius.com
 
-    UltEvents Asset:
-    Kybernetik
+    Lean
+    Pool Asset: Carlos Wilkes
+
+    UltEvents Asset: Kybernetik
 
 '
   m_isRightToLeft: 0
