@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UltEvents;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {    
@@ -63,5 +64,19 @@ public class GameManager : Singleton<GameManager>
         else Instance.hellWins.Invoke();
 
         UIManager.ShowAlignmentWinner(winner);
+    }
+
+    public static void QuitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+
+        Application.Quit();
+    }
+
+    public static void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
