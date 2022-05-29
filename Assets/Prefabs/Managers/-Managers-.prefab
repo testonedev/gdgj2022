@@ -271,6 +271,58 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2512598401714066316, guid: bdc7cc09472d4cb42be42a3c8c41f884,
         type: 3}
+      propertyPath: columns
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512598401714066316, guid: bdc7cc09472d4cb42be42a3c8c41f884,
+        type: 3}
+      propertyPath: plotPrefabs.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512598401714066316, guid: bdc7cc09472d4cb42be42a3c8c41f884,
+        type: 3}
+      propertyPath: plotPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 3240635808570934360, guid: 9967cf31f4ca1ac42b2fd3a7120cf2b5,
+        type: 3}
+    - target: {fileID: 2512598401714066316, guid: bdc7cc09472d4cb42be42a3c8c41f884,
+        type: 3}
+      propertyPath: plotPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 3240635808570934360, guid: 082f0d3239fe7114a91aefef71768cf2,
+        type: 3}
+    - target: {fileID: 2512598401714066316, guid: bdc7cc09472d4cb42be42a3c8c41f884,
+        type: 3}
+      propertyPath: plotPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 3240635808570934360, guid: f1d1c1abd4f1ac74dbcca55945280e9f,
+        type: 3}
+    - target: {fileID: 2512598401714066316, guid: bdc7cc09472d4cb42be42a3c8c41f884,
+        type: 3}
+      propertyPath: plotPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 3240635808570934360, guid: a7b4a9f2521b37f4b819e469fcc0e9a0,
+        type: 3}
+    - target: {fileID: 2512598401714066316, guid: bdc7cc09472d4cb42be42a3c8c41f884,
+        type: 3}
+      propertyPath: plotPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 3240635808570934360, guid: 16c9d8b1d20d78044a5a248d9289e134,
+        type: 3}
+    - target: {fileID: 2512598401714066316, guid: bdc7cc09472d4cb42be42a3c8c41f884,
+        type: 3}
+      propertyPath: plotPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 3240635808570934360, guid: 12e7d24398d10014eb09dacc876aa588,
+        type: 3}
+    - target: {fileID: 2512598401714066316, guid: bdc7cc09472d4cb42be42a3c8c41f884,
+        type: 3}
+      propertyPath: plotPrefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 3240635808570934360, guid: 88c3d5a6849cffb43811654264cc51c5,
+        type: 3}
+    - target: {fileID: 2512598401714066316, guid: bdc7cc09472d4cb42be42a3c8c41f884,
+        type: 3}
       propertyPath: plotUpgradeCostMultiplier
       value: 20
       objectReference: {fileID: 0}
@@ -334,6 +386,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2512598403055143322, guid: bdc7cc09472d4cb42be42a3c8c41f884,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512598403055143322, guid: bdc7cc09472d4cb42be42a3c8c41f884,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.1000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512598403055143322, guid: bdc7cc09472d4cb42be42a3c8c41f884,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512598403055143323, guid: bdc7cc09472d4cb42be42a3c8c41f884,
+        type: 3}
+      propertyPath: m_CellGap.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512598403055143323, guid: bdc7cc09472d4cb42be42a3c8c41f884,
+        type: 3}
+      propertyPath: m_CellGap.z
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdc7cc09472d4cb42be42a3c8c41f884, type: 3}
 --- !u!114 &9070582946025877354 stripped
@@ -376,6 +453,11 @@ PrefabInstance:
       propertyPath: heavenManager
       value: 
       objectReference: {fileID: 9070582947385923703}
+    - target: {fileID: 995860841416976666, guid: 05cd420d76ee41e48ae74a0f15e5eb2e,
+        type: 3}
+      propertyPath: maxUpgradeLevel
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 995860841416976667, guid: 05cd420d76ee41e48ae74a0f15e5eb2e,
         type: 3}
       propertyPath: m_RootOrder
@@ -446,6 +528,78 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9070582946492861682}
     m_Modifications:
+    - target: {fileID: 694170215987209813, guid: aebcd0296e214bb46bd725aba9fec4a8,
+        type: 3}
+      propertyPath: m_CellGap.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 694170215987209813, guid: aebcd0296e214bb46bd725aba9fec4a8,
+        type: 3}
+      propertyPath: m_CellGap.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 694170215987209814, guid: aebcd0296e214bb46bd725aba9fec4a8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 694170215987209814, guid: aebcd0296e214bb46bd725aba9fec4a8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 694170216233116842, guid: aebcd0296e214bb46bd725aba9fec4a8,
+        type: 3}
+      propertyPath: columns
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 694170216233116842, guid: aebcd0296e214bb46bd725aba9fec4a8,
+        type: 3}
+      propertyPath: plotPrefabs.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 694170216233116842, guid: aebcd0296e214bb46bd725aba9fec4a8,
+        type: 3}
+      propertyPath: plotPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 6588232453372066104, guid: 381f11eddf3c12048a48c3b6320889bf,
+        type: 3}
+    - target: {fileID: 694170216233116842, guid: aebcd0296e214bb46bd725aba9fec4a8,
+        type: 3}
+      propertyPath: plotPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 6588232453372066104, guid: 480e157328c17a94fb196410fe8420bc,
+        type: 3}
+    - target: {fileID: 694170216233116842, guid: aebcd0296e214bb46bd725aba9fec4a8,
+        type: 3}
+      propertyPath: plotPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 6588232453372066104, guid: b5d2ceb9fc6c2284ab0043d7e8455bf9,
+        type: 3}
+    - target: {fileID: 694170216233116842, guid: aebcd0296e214bb46bd725aba9fec4a8,
+        type: 3}
+      propertyPath: plotPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 6588232453372066104, guid: f90d7c24469992947af3f220c531d036,
+        type: 3}
+    - target: {fileID: 694170216233116842, guid: aebcd0296e214bb46bd725aba9fec4a8,
+        type: 3}
+      propertyPath: plotPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 6588232453372066104, guid: a35d97d5f8e40b340ab280592d1e8aed,
+        type: 3}
+    - target: {fileID: 694170216233116842, guid: aebcd0296e214bb46bd725aba9fec4a8,
+        type: 3}
+      propertyPath: plotPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 6588232453372066104, guid: 51f7ee45b88782641a70a48e980ca983,
+        type: 3}
+    - target: {fileID: 694170216233116842, guid: aebcd0296e214bb46bd725aba9fec4a8,
+        type: 3}
+      propertyPath: plotPrefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 6588232453372066104, guid: d262b704ee0ee914a8c01ba79596fef8,
+        type: 3}
     - target: {fileID: 694170216233116842, guid: aebcd0296e214bb46bd725aba9fec4a8,
         type: 3}
       propertyPath: plotUpgradeCostMultiplier

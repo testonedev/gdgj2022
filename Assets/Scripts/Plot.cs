@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UltEvents;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -7,6 +8,8 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
 {
     [SerializeField] private GameObject highlightIndicator;
     [SerializeField] private GameObject selectedIndicator;
+    [SerializeField] private Transform graphics;
+    [SerializeField] private Vector3 newGraphicsOffset = new Vector3(3f, 0f, 0f);
 
     private int indexNumber;
     private int upgradeLevel;
@@ -14,6 +17,11 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
     private int pointsPerInteraction;
     private Alignment alignment;
     private ParkManager parkManager;
+    private bool selected;
+
+    public UltEvent OnHighlighted;
+    public UltEvent OnSelected;
+    public UltEvent OnUpgrade;
 
     public int IndexNumber { get => indexNumber; }
     public int UpgradeLevel { get => upgradeLevel; }
@@ -34,7 +42,6 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
         parkManager.AddSoulPoints(pointsPerTick);
     }
 
-    // NOTE: Not sure if we need this still
     public virtual int GetAlignmentPoints()
     {
         return pointsPerInteraction;
@@ -42,25 +49,33 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
 
     public bool UpgradePlot()
     {
+        if (upgradeLevel == GameManager.Instance.MaxUpgradeLevel)
+            return false;
         if (parkManager.SpendSoulPoints(parkManager.GetUpgradeCost(upgradeLevel, indexNumber)))
         {
             upgradeLevel++;
             pointsPerInteraction += upgradeLevel * 2;
             pointsPerTick += upgradeLevel;
 
+            AddNewGraphics();
+
+            OnUpgrade?.Invoke();
+
             return true;
         }
         return false;
     }
 
-    public virtual void Interact(Soul soulThatInteracted)
-    {
-        parkManager.AddSoulPoints(pointsPerInteraction);
-    }
+    // NOTE: This isn't being used
+    //public virtual void Interact(Soul soulThatInteracted)
+    //{
+    //    parkManager.AddSoulPoints(pointsPerInteraction);
+    //}
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         highlightIndicator.SetActive(true);
+        OnHighlighted?.Invoke();
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -70,6 +85,22 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        UIManager.Instance.ShowPlotWindow(this);
+        UIManager.Instance.SelectPlot(this);
+    }
+
+    public void Select()
+    {
+        selectedIndicator.SetActive(true);
+        OnSelected?.Invoke();
+    }
+
+    public void Deselect()
+    {
+        selectedIndicator.SetActive(false);
+    }
+
+    public void AddNewGraphics()
+    {
+        Transform newGraphics = Instantiate(graphics, graphics.position + (newGraphicsOffset * upgradeLevel), Quaternion.identity, transform);
     }
 }

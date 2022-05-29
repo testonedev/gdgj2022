@@ -10,6 +10,7 @@ public class UIManager : Singleton<UIManager>
     private PlotWindowUI plotWindow;
     private WinPanelUI hellWins;
     private WinPanelUI heavenWins;
+    private Plot selectedPlot;
 
     //runtime
     private WinPanelUI[] allWinPanels;
@@ -35,9 +36,42 @@ public class UIManager : Singleton<UIManager>
         }
     }
 
+    // NOTE: Thank god this is just for the jam,
+    // I've been slapping together some janky ass code
+    public void TryUpgradeSelectedPlot()
+    {
+        plotWindow.TryUpgradeCurrentPlot();
+    }
+
+    public void SelectPlot(Plot plot)
+    {
+        if (selectedPlot == plot)
+            return;
+
+        if (selectedPlot != null)
+            selectedPlot.Deselect();
+
+        selectedPlot = plot;
+
+        if (selectedPlot != null)
+        {
+            ShowPlotWindow(selectedPlot);
+            selectedPlot.Select();
+        }
+    }
+
     public void ShowPlotWindow(Plot plot)
     {
         plotWindow.SetPlot(plot);
+    }
+    
+    public static void Deselect()
+    {
+        if (Instance.selectedPlot != null)
+        {
+            Instance.selectedPlot.Deselect();
+            Instance.selectedPlot = null;
+        }
     }
 
     public static void ShowAlignmentWinner(Alignment winner)
