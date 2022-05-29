@@ -265,8 +265,8 @@ PrefabInstance:
     - target: {fileID: 5807191329306933193, guid: fa980f3dc01153642abd680fab6ac046,
         type: 3}
       propertyPath: m_text
-      value: Unfortunately most souls are lured by the deadly sins and hell celebrates
-        yet another victory...
+      value: Unfortunately most souls are lured by the deadly sins and hell welcomes
+        most souls...
       objectReference: {fileID: 0}
     - target: {fileID: 6198376488100208180, guid: fa980f3dc01153642abd680fab6ac046,
         type: 3}

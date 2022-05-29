@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UltEvents;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, IPointerExitHandler
 {
@@ -10,6 +11,7 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
     [SerializeField] private GameObject selectedIndicator;
     [SerializeField] private Transform graphics;
     [SerializeField] private Vector3 newGraphicsOffset = new Vector3(3f, 0f, 0f);
+    [SerializeField] private TextMeshProUGUI upgradeText;
 
     private int indexNumber;
     private int upgradeLevel;
@@ -56,6 +58,8 @@ public class Plot : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
             upgradeLevel++;
             pointsPerInteraction += upgradeLevel * 2;
             pointsPerTick += upgradeLevel;
+
+            upgradeText.text = upgradeLevel.ToString();
 
             AddNewGraphics();
 

@@ -36,14 +36,15 @@ public class GameManager : Singleton<GameManager>
         else Instance.hellManager.AddSoulPoints(alignmentPoints);
 
         //check if hell or heaven reached score goal
-        if (Instance.heavenManager.TotalCollectedPoints >= Instance.scoreGoal) GameOver(Alignment.Heaven);
+        //if both scored the goal, hell wins - unfair, but that's how life is, right?
+        if (Instance.heavenManager.TotalCollectedPoints >= Instance.scoreGoal && Instance.hellManager.TotalCollectedPoints >= Instance.scoreGoal) GameOver(Alignment.Hell);
+        else if (Instance.heavenManager.TotalCollectedPoints >= Instance.scoreGoal) GameOver(Alignment.Heaven);
         else if (Instance.hellManager.TotalCollectedPoints >= Instance.scoreGoal) GameOver(Alignment.Hell);
     }
 
     public static Plot GetTargetPlot(int indexNumber)
     {
         //decide if have to go to the heaven or hell plot
-
         int heavenTotal = Instance.heavenManager.GetIndexScore(indexNumber);
         int hellTotal = Instance.hellManager.GetIndexScore(indexNumber);
 
