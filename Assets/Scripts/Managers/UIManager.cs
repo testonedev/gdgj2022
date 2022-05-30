@@ -70,6 +70,7 @@ public class UIManager : Singleton<UIManager>
         if (Instance.selectedPlot != null)
         {
             Instance.selectedPlot.Deselect();
+            Instance.plotWindow.SetPlot(null);
             Instance.selectedPlot = null;
         }
     }
